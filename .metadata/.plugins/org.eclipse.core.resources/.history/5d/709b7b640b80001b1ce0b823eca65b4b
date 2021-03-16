@@ -1,0 +1,80 @@
+package com.example.login.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.login.model.Country;
+import com.example.login.model.Login;
+import com.example.login.model.Register;
+import com.example.login.repository.CountryRepository;
+import com.example.login.repository.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private CountryRepository countryRepository;
+	
+	
+	
+	@Override
+	public String register(Register register) {
+		
+		Optional<Register> optRegister=userRepository.findByEmail(register.getEmail());
+		if(optRegister.isPresent()) {
+			
+			return "User already represent";
+		}else {
+			
+			if(register!=null) {
+				
+				userRepository.save(register);
+			}
+			return "Registration successfull";
+		}
+	}
+
+	@Override
+	public String login(Login login) {
+		
+		Optional<Register> optRegister=userRepository.findByEmail(login.getEmail());
+		if(optRegister.isPresent()) {
+			
+			Register register=optRegister.get();
+			if(register.getPassword().equals(login.getPassword())) {
+				
+				return "login successfull";
+			}else {
+				return "password doesn't match";
+			}
+			
+		}else {
+			return " email or password is invalid";
+		}
+	}
+
+	@Override
+	public List<Country> getCountry() {
+		
+		List<Country> list=countryRepository.findAll();
+		if(list!=null) {
+			return list;
+		}else {
+			return new ArrayList<Country>();
+		}
+	}
+
+	@Override
+	public Country getCountryByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

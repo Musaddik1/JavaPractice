@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;com.example.login.repository.CountryRepository.findByCountryName(...)&apos; to &apos;findByCountryname&apos;&#x0D;&#x0A;- Original project: &apos;LoginApp&apos;&#x0D;&#x0A;- Original element: &apos;com.example.login.repository.CountryRepository.findByCountryName(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.login.repository.CountryRepository.findByCountryname(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;findByCountryName&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.login.repository{CountryRepository.java[CountryRepository~findByCountryName~QString;" name="findByCountryname" references="true" stamp="1615207298592" version="1.0"/>
+</session>

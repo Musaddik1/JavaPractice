@@ -1,0 +1,165 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class CurrencyConverterImpl implements CurrencyConverter {
+
+	@Override
+	public String covertCurrency(String from, String to, double amount) {
+		
+		if(!from.equals(to)) {
+			switch(from.toUpperCase()) {
+			
+			case "INDIA" :
+				if(to.equalsIgnoreCase("US") || to.equalsIgnoreCase("USA")) {
+					
+					return String.valueOf(amount*0.01378)+" USA";
+				}else if(to.equalsIgnoreCase("EURO")) {
+					
+					return String.valueOf(amount*0.01136)+" EURO";
+				}else if(to.equalsIgnoreCase("British Pound") || to.equalsIgnoreCase("Pound")) {
+					
+					return String.valueOf(amount*0.00982)+" Pound";
+				}else if(to.equalsIgnoreCase("Swiss Franc") || to.equalsIgnoreCase("CHF")) {
+					
+					return String.valueOf(amount*0.01)+" CHF";
+				} else if(to.equalsIgnoreCase("Japanese Yen") || to.equalsIgnoreCase("JPY")) {
+					
+					return String.valueOf(amount*1.45)+" JPY";
+				}else if(to.equalsIgnoreCase("polish Zloty")|| to.equalsIgnoreCase("pln")) {
+					
+					return String.valueOf(amount*0.05098)+" PLN";
+				}else if(to.equalsIgnoreCase("Chinese Yuan")|| to.equalsIgnoreCase("CNY")) {
+					
+					return String.valueOf(amount*0.08910)+" CNY";
+					
+				}else if(to.equalsIgnoreCase("canadian dollar") || to.equalsIgnoreCase("CAD")) {
+					return String.valueOf(amount*0.01739)+" CAD";
+				}else if(to.equalsIgnoreCase("Afghanistan")|| to.equalsIgnoreCase("AFN")) {
+					
+					return String.valueOf(amount*1.06045)+" AFN";
+				}else if(to.equalsIgnoreCase("Albanian Lek") || to.equalsIgnoreCase("All")) {
+					return String.valueOf(amount*1.38950)+" ALL";
+				}else if(to.equalsIgnoreCase("Algerian Dinar") || to.equalsIgnoreCase("DZD")) {
+					return String.valueOf(amount*1.82284)+" DZD";
+				}else if(to.equalsIgnoreCase("United Arab Emirates dirham") || to.equalsIgnoreCase("AED")) {
+					 return String.valueOf(amount*0.05061)+" AED";
+				}else if(to.equalsIgnoreCase("Andorran franc")|| to.equalsIgnoreCase("ADF")) {
+					return String.valueOf(amount*0.07448)+" ADF";
+				}else if(to.equalsIgnoreCase("Andorran peseta") || to.equalsIgnoreCase("ADP")) {
+					return String.valueOf(amount*1.88931)+" ADP";
+				}else if(to.equalsIgnoreCase("Angolan Kwanza") || to.equalsIgnoreCase("AOA")) {
+					return String.valueOf(amount*8.91962)+" AOA";
+				}else if(to.equalsIgnoreCase("Argentine Peso") || to.equalsIgnoreCase("ARS")) {
+					return String.valueOf(amount*1.23013)+" ARS";
+				}else if(to.equalsIgnoreCase("Armenian Dram") || to.equalsIgnoreCase("AMD")) {
+					return String.valueOf(amount*7.19000)+" AMD";
+				}else if(to.equalsIgnoreCase("Aruban florin")|| to.equalsIgnoreCase("AWD")) {
+					return String.valueOf(amount*0.02470)+" AWD";
+				}else if(to.equalsIgnoreCase("Australian dollar")|| to.equalsIgnoreCase("AUD")) {
+					return String.valueOf(amount*0.01746)+" AUD";
+				}else if(to.equalsIgnoreCase("Austrian Schilling*")|| to.equalsIgnoreCase("ATS")) {
+					return String.valueOf(amount*0.01746)+" ATS";
+				}else if(to.equalsIgnoreCase("Azerbaijan new mannat")|| to.equalsIgnoreCase("AZN")) {
+					return String.valueOf(amount*0.02343)+" AZN";
+				}else if(to.equalsIgnoreCase("Azerbaijan old mannat")|| to.equalsIgnoreCase("AZM")) {
+					return String.valueOf(amount*117.146)+" AZM";
+				}else if(to.equalsIgnoreCase("Brahamian dollar") || to.equalsIgnoreCase("BSD")) {
+					return String.valueOf(amount*0.01378)+ " BSD";
+				}else if(to.equalsIgnoreCase("Bahraini dinar")|| to.equalsIgnoreCase("BHD")) {
+					return String.valueOf(amount*0.00515)+" BHD";
+				}else if(to.equalsIgnoreCase("Bangladeshi taka") || to.equalsIgnoreCase("BDT")) {
+					return String.valueOf(amount*1.14790)+" BDT";
+				}else if(to.equalsIgnoreCase("Barbados dollar")|| to.equalsIgnoreCase("BBD")) {
+					return String.valueOf(amount*0.02756)+" BBD";
+				}else if(to.equalsIgnoreCase("Belarusian old ruble")|| to.equalsIgnoreCase("BYR")) {
+					return String.valueOf(amount*357.167)+" BYR";
+				}else if(to.equalsIgnoreCase("Belarusian ruble")|| to.equalsIgnoreCase("BYN")) {
+					return String.valueOf(amount*0.03572)+" BYN";
+				}else if(to.equalsIgnoreCase("Belgian franc*")|| to.equalsIgnoreCase("BEF")) {
+					return String.valueOf(amount*0.45806)+" BEF";
+				}else if(to.equalsIgnoreCase("Belize dollar")|| to.equalsIgnoreCase("BZD")) {
+					return String.valueOf(amount*0.02722)+" BZD";
+				}else if(to.equalsIgnoreCase("bermudian dollar")|| to.equalsIgnoreCase("BMD")) {
+					return String.valueOf(amount*0.01378)+" BMD";
+				}else if(to.equalsIgnoreCase("Bhutan Ngultrum")|| to.equalsIgnoreCase("BTN")) {
+					return String.valueOf(amount*1.00000)+" BTN";
+				}else if(to.equalsIgnoreCase("Bolivian boliviano")||to.equalsIgnoreCase("BOB")) {
+					return String.valueOf(0.09301)+" BOB";
+				}else if(to.equalsIgnoreCase("Bosnian Mark") || to.equalsIgnoreCase("BAM")) {
+					return String.valueOf(amount*0.02222)+" BAM";
+				}else if(to.equalsIgnoreCase("Botswana Pula")||to.equalsIgnoreCase("BWP")) {
+					return String.valueOf(amount*0.14797)+" BWP";
+				}else if(to.equalsIgnoreCase("Brazilian Real") ||to.equalsIgnoreCase("BRL")) {
+					return String.valueOf(amount*0.07495)+" BRL";
+				}else if(to.equalsIgnoreCase("Brunei dollar") || to.equalsIgnoreCase("BND")) {
+					return String.valueOf(amount*0.01822)+" BND";
+				}else if(to.equalsIgnoreCase("Bulgarian Lev") || to.equalsIgnoreCase("BGN")) {
+					return String.valueOf(amount*0.02222)+" BGN";
+				}else if(to.equalsIgnoreCase("Bulgarian old lev") || to.equalsIgnoreCase("BGL")) {
+					
+					return String.valueOf(amount*0.02222)+" BGL";
+				}else if(to.equalsIgnoreCase("Burundi Franc*")|| to.equalsIgnoreCase("BIF")) {
+					return String.valueOf(amount*26.5510)+" BIF";
+				}
+				
+				else if(to.equalsIgnoreCase("Cambodian Riel")|| to.equalsIgnoreCase("KHR")) {
+					
+					return String.valueOf(amount*55.5139)+" KHR";
+				}else if(to.equalsIgnoreCase("Canadian Dollar") || to.equalsIgnoreCase("CAD")) {
+					return String.valueOf(amount*0.01734)+" CAD";
+				}else if(to.equalsIgnoreCase("Cape Verde  Escudo")|| to.equalsIgnoreCase("CVE")) {
+					
+					return String.valueOf(amount*1.25269)+" CVE";
+				}else if(to.equalsIgnoreCase("Cayman Islands dollar")||to.equalsIgnoreCase("KYD")) {
+					return String.valueOf(amount*0.01151)+" KYD";
+					
+				}else if(to.equalsIgnoreCase("Central Pacific Franc")||to.equalsIgnoreCase("CFP")) {
+					
+					return String.valueOf(amount*1.35569)+" CFP";
+				}
+				
+				else if(to.equalsIgnoreCase("CFA Franc BCEAO") || to.equalsIgnoreCase("XOF")) {
+					
+					return String.valueOf(amount*7.45214)+" XOF";
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					
+					
+			}
+		}
+		
+		return null;
+	}
+
+}
